@@ -96,15 +96,21 @@ const Contact = () => {
             <div>
               <h3 className="text-xl font-bold mb-6 dark:text-white text-gray-900">Follow Me</h3>
               <div className="flex gap-4">
-                {[Github, Linkedin, Twitter].map((Social, idx) => (
+                {[
+                  { Icon: Github, href: "https://github.com/naveennanirockes1997-android" },
+                  { Icon: Linkedin, href: "https://www.linkedin.com/in/vasamsetti-naveen-86-814538390/" },
+                  { Icon: Twitter, href: "#" }
+                ].map((social, idx) => (
                   <motion.a 
                     key={idx}
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 rounded-xl glass border dark:border-white/10 border-gray-200 flex items-center justify-center dark:text-gray-400 text-gray-600 hover:text-primary transition-colors"
                   >
-                    <Social size={20} />
+                    <social.Icon size={20} />
                   </motion.a>
                 ))}
               </div>

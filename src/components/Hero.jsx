@@ -75,8 +75,8 @@ const Hero = () => {
 
           <motion.div variants={item} className="flex items-center gap-6 pt-4">
             {[
-              { icon: Github, href: "https://github.com/naveenvasamsetti" },
-              { icon: Linkedin, href: "https://linkedin.com/in/naveen-vasamsetti" },
+              { icon: Github, href: "https://github.com/naveennanirockes1997-android" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/vasamsetti-naveen-86-814538390/" },
               { icon: Mail, href: "mailto:naveenvasamsetti86@gmail.com" }
             ].map((social, i) => (
               <a 

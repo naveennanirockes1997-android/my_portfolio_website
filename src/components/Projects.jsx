@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Code2, Layers } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const Projects = () => {
+  const { isDarkMode } = useTheme();
   const projects = [
     {
       title: "Weather Watch",
@@ -125,7 +127,9 @@ const Projects = () => {
               {/* Spotlight Overlay */}
               <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                    style={{
-                     background: `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(99, 102, 241, 0.15), transparent 80%)`
+                     background: isDarkMode 
+                      ? `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(99, 102, 241, 0.15), transparent 80%)`
+                      : `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(99, 102, 241, 0.05), transparent 80%)`
                    }}
               />
 
