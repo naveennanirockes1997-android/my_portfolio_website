@@ -42,22 +42,22 @@ const Experience = () => {
             viewport={{ once: true }}
             className="w-16 h-1 w-16 mb-4 bg-primary rounded-full"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Professional Experience</h2>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 dark:text-white text-gray-900">Professional Experience</h2>
+          <p className="dark:text-gray-400 text-gray-600 text-center max-w-2xl">
             My journey in the tech world has been driven by a passion for solving problems and creating value.
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto mt-20">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-white/10" />
+          <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px dark:bg-white/10 bg-gray-200" />
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 md:-translate-x-1/2 w-8 h-8 rounded-full bg-dark border-4 border-primary z-10 hidden md:block" />
+                <div className="absolute left-0 md:left-1/2 top-0 md:-translate-x-1/2 w-8 h-8 rounded-full dark:bg-dark bg-white border-4 border-primary z-10 hidden md:block" />
                 
                 {/* Content Card */}
                 <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
@@ -66,15 +66,15 @@ const Experience = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="glass-card p-8 rounded-3xl hover:border-primary/30 transition-all duration-500"
+                    className="glass-card p-8 rounded-3xl hover:border-primary/30 transition-all duration-500 dark:bg-white/2 bg-white border dark:border-white/10 border-gray-100 shadow-sm"
                   >
                     <div className="flex items-center gap-2 mb-4 text-primary text-sm font-semibold">
                        <Calendar size={14} />
                        {exp.period}
                     </div>
-                    <h3 className="text-2xl font-bold mb-1">{exp.title}</h3>
-                    <div className="flex items-center gap-2 text-gray-400 text-sm mb-6">
-                       <span className="font-medium text-white/80">{exp.company}</span>
+                    <h3 className="text-2xl font-bold mb-1 dark:text-white text-gray-900">{exp.title}</h3>
+                    <div className="flex items-center gap-2 dark:text-gray-400 text-gray-500 text-sm mb-6">
+                       <span className="font-medium dark:text-white/80 text-gray-700">{exp.company}</span>
                        <span className="opacity-30">•</span>
                        <div className="flex items-center gap-1">
                           <MapPin size={12} />
@@ -84,7 +84,7 @@ const Experience = () => {
                     
                     <ul className="space-y-3">
                        {exp.achievements.map((item, i) => (
-                         <li key={i} className="flex gap-3 text-sm text-gray-400">
+                         <li key={i} className="flex gap-3 text-sm dark:text-gray-400 text-gray-600">
                             <span className="text-primary mt-1">•</span>
                             {item}
                          </li>

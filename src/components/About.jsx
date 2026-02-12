@@ -19,8 +19,8 @@ const About = () => {
             viewport={{ once: true }}
             className="w-16 h-1 w-16 mb-4 bg-primary rounded-full"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">About Me</h2>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 dark:text-white text-gray-900">About Me</h2>
+          <p className="dark:text-gray-400 text-gray-600 text-center max-w-2xl">
             A passionate MERN Stack Developer with a knack for building visually stunning and highly functional web applications.
           </p>
         </div>
@@ -33,14 +33,14 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold flex items-center gap-3">
+            <h3 className="text-2xl font-bold flex items-center gap-3 dark:text-white text-gray-900">
               <User className="text-primary" /> Professional Summary
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="dark:text-gray-400 text-gray-600 leading-relaxed">
               With over 2 years of experience in full-stack development, I specialize in the MERN stack (MongoDB, Express.js, React, Node.js). My expertise lies in creating responsive, user-centric interfaces and scalable server-side architectures.
             </p>
-            <p className="text-gray-400 leading-relaxed">
-              I've had the privilege of working on high-traffic platforms like <strong>ETV WIN</strong> (an OTT platform), where I focused on optimizing UI performance and implementing complex authentication flows. I'm dedicated to writing clean, maintainable code and always staying ahead of the curve with modern technologies.
+            <p className="dark:text-gray-400 text-gray-600 leading-relaxed">
+              I've had the privilege of working on high-traffic platforms like <strong className="dark:text-white text-gray-900">ETV WIN</strong> (an OTT platform), where I focused on optimizing UI performance and implementing complex authentication flows. I'm dedicated to writing clean, maintainable code and always staying ahead of the curve with modern technologies.
             </p>
             
             <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -48,10 +48,10 @@ const About = () => {
                 <motion.div
                   key={idx}
                   whileHover={{ y: -5 }}
-                  className="p-6 rounded-2xl glass-card text-center"
+                  className="p-6 rounded-2xl glass-card text-center dark:bg-white/2 bg-white border dark:border-white/10 border-gray-100 shadow-sm"
                 >
                   <stat.icon className={`mx-auto mb-4 ${stat.color}`} size={28} />
-                  <h4 className="text-3xl font-bold mb-1">{stat.value}</h4>
+                  <h4 className="text-3xl font-bold mb-1 dark:text-white text-gray-900">{stat.value}</h4>
                   <p className="text-xs text-gray-500 uppercase tracking-widest">{stat.label}</p>
                 </motion.div>
               ))}
@@ -68,11 +68,11 @@ const About = () => {
           >
             <div className="aspect-square relative flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-[3rem] rotate-6 scale-95 blur-sm" />
-              <div className="absolute inset-0 border border-white/10 rounded-[3rem] -rotate-3 transition-transform hover:rotate-0 duration-500" />
-              <div className="relative w-full h-full glass-card rounded-[3rem] overflow-hidden flex items-center justify-center group">
+              <div className="absolute inset-0 border dark:border-white/10 border-gray-200 rounded-[3rem] -rotate-3 transition-transform hover:rotate-0 duration-500" />
+              <div className="relative w-full h-full glass-card rounded-[3rem] overflow-hidden flex items-center justify-center group dark:bg-[#0a0a0a] bg-white border dark:border-white/10 border-gray-100">
                  {/* Replace with actual image later or use a placeholder visual */}
                  <div className="absolute inset-0 bg-card p-12">
-                   <div className="w-full h-full border border-primary/20 rounded-2xl overflow-hidden relative flex items-center justify-center bg-dark">
+                   <div className="w-full h-full border dark:border-primary/20 border-primary/10 rounded-2xl overflow-hidden relative flex items-center justify-center dark:bg-dark bg-gray-50">
                       <motion.div 
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -80,10 +80,10 @@ const About = () => {
                       >
                         NV
                       </motion.div>
-                      <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-dark to-transparent">
+                      <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t dark:from-dark from-white to-transparent">
                          <p className="text-xs font-mono text-primary mb-2">// console.log("Hello, World!")</p>
-                         <h4 className="text-xl font-bold">Naveen Vasamsetti</h4>
-                         <p className="text-sm text-gray-400">Software Engineer</p>
+                         <h4 className="text-xl font-bold dark:text-white text-gray-900">Naveen Vasamsetti</h4>
+                         <p className="text-sm dark:text-gray-400 text-gray-500">Software Engineer</p>
                       </div>
                    </div>
                  </div>

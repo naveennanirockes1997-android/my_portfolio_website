@@ -56,6 +56,27 @@ Pixel-perfect clone of a streaming platform interface with responsive carousels.
 
 - [Live Demo](https://etvwin-demo-ui.vercel.app/) | [Source Code](https://github.com/naveennanirockes1997-android/etvwin-demo-ui-)
 
+<<<<<<< HEAD
+=======
+### 7. **Production Level Sass**
+
+Advanced SCSS implementation demonstrating modular architecture and scalable styling patterns.
+
+- [Live Demo](https://production-level-sass.vercel.app/) | [Source Code](https://github.com/naveennanirockes1997-android/production-level-Sass)
+
+### 8. **Ecommerce Store**
+
+Lightweight shopping cart application focusing on efficient state updates.
+
+- [Live Demo](https://ecommerce-store-kappa-pink.vercel.app/) | [Source Code](https://github.com/naveennanirockes1997-android/ecommerce-store)
+
+### 9. **Small Basket React**
+
+Full-featured MERN stack online store with product filtering and admin management.
+
+- [Source Code](https://github.com/naveenvasamsetti/MERN_project_small_basket_React)
+
+>>>>>>> e418ba7 (meess)
 ## 🚀 Getting Started
 
 To run this portfolio locally:
@@ -73,6 +94,12 @@ To run this portfolio locally:
    npm run dev
    ```
 
+<<<<<<< HEAD
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
+=======
+---
+
+Built with ❤️ by [Naveen Vasamsetti](https://github.com/naveenvasamsetti)
+>>>>>>> e418ba7 (meess)

@@ -61,8 +61,8 @@ const Skills = () => {
             viewport={{ once: true }}
             className="w-16 h-1 w-16 mb-4 bg-primary rounded-full"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Technical Skills</h2>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 dark:text-white text-gray-900">Technical Skills</h2>
+          <p className="dark:text-gray-400 text-gray-600 text-center max-w-2xl">
             My diverse toolkit allows me to build robust applications from scratch, focusing on performance and scalability.
           </p>
         </div>
@@ -78,9 +78,9 @@ const Skills = () => {
             <motion.div
               key={groupIdx}
               variants={itemVariants}
-              className="glass-card p-8 rounded-3xl relative group"
+              className="glass-card p-8 rounded-3xl relative group dark:bg-white/2 bg-white border dark:border-white/10 border-gray-100 shadow-sm"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <div className="absolute top-0 right-0 p-6 opacity-[0.03] dark:opacity-10 group-hover:opacity-20 transition-opacity">
                  <group.icon size={80} />
               </div>
               
@@ -89,16 +89,16 @@ const Skills = () => {
                   <group.icon size={24} />
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-8">{group.title}</h3>
+                <h3 className="text-2xl font-bold mb-8 dark:text-white text-gray-900">{group.title}</h3>
                 
                 <div className="space-y-6">
                   {group.skills.map((skill, skillIdx) => (
                     <div key={skillIdx} className="space-y-2">
                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-gray-300 font-medium">{skill.name}</span>
+                          <span className="dark:text-gray-300 text-gray-700 font-medium">{skill.name}</span>
                           <span className="text-[10px] text-primary uppercase font-bold tracking-widest bg-primary/10 px-2 py-0.5 rounded-full">{skill.level}</span>
                        </div>
-                       <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                       <div className="h-1.5 w-full dark:bg-white/5 bg-gray-100 rounded-full overflow-hidden">
                           <motion.div 
                             initial={{ width: 0 }}
                             whileInView={{ width: skill.level === 'Expert' ? '95%' : skill.level === 'Advanced' ? '85%' : '65%' }}

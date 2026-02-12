@@ -19,8 +19,8 @@ const Projects = () => {
       description: " immersive 3D scrolling product showcase featuring dynamic GSAP animations and interactive 3D elements.",
       image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=800&auto=format&fit=crop",
       tags: ["React", "GSAP", "Three.js", "Framer Motion"],
-      github: "https://github.com/naveenvasamsetti/ice-cream-animi",
-      demo: "#"
+      github: "https://github.com/naveennanirockes1997-android/my_portfolio_website",
+      demo: "https://ice-cream-brands.onrender.com"
     },
     {
       title: "Kanban Task Board",
@@ -63,7 +63,7 @@ const Projects = () => {
       title: "Etvwin Demo UI",
       category: "Streaming UI",
       description: "Pixel-perfect clone of a streaming platform interface with responsive carousels and smooth transitions.",
-      image: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&auto=format&fit=crop",
+      image: "https://www.businessapac.com/wp-content/uploads/2025/01/OTT-Platforms-in-India.jpg",
       tags: ["React", "Vite", "TailwindCSS", "Swiper"],
       github: "https://github.com/naveennanirockes1997-android/etvwin-demo-ui-",
       demo: "https://etvwin-demo-ui.vercel.app/"
@@ -98,8 +98,8 @@ const Projects = () => {
             viewport={{ once: true }}
             className="w-16 h-1 w-16 mb-4 bg-primary rounded-full"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Featured Projects</h2>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 dark:text-white text-gray-900">Featured Projects</h2>
+          <p className="dark:text-gray-400 text-gray-600 text-center max-w-2xl">
             A small selection of my favorite projects from the past few years. High quality, production-ready applications.
           </p>
         </div>
@@ -113,16 +113,30 @@ const Projects = () => {
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="glass-card rounded-3xl overflow-hidden flex flex-col group h-full"
+              className="glass-card rounded-3xl overflow-hidden flex flex-col group h-full relative dark:bg-white/2 bg-white border dark:border-white/10 border-gray-100 shadow-sm"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+                e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+              }}
             >
+              {/* Spotlight Overlay */}
+              <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                   style={{
+                     background: `radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(99, 102, 241, 0.15), transparent 80%)`
+                   }}
+              />
+
               {/* Project Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden z-10">
                  <img 
                    src={project.image} 
                    alt={project.title} 
                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                  />
-                 <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60" />
+                 <div className="absolute inset-0 bg-gradient-to-t dark:from-dark from-[#000]/40 to-transparent opacity-60" />
                  
                  {/* Links on hover */}
                  <div className="absolute top-4 right-4 flex gap-2">
@@ -133,20 +147,20 @@ const Projects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="p-8 flex flex-col flex-grow z-10 relative">
                 <div className="flex items-center gap-2 text-primary mb-3">
                    <Layers size={14} />
                    <span className="text-[10px] font-bold uppercase tracking-wider">{project.category || "Development"}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-6 line-clamp-3">
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors dark:text-white text-gray-900">{project.title}</h3>
+                <p className="dark:text-gray-400 text-gray-600 text-sm mb-6 line-clamp-3">
                    {project.description}
                 </p>
                 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-8 mt-auto">
                    {project.tags.map((tag, i) => (
-                     <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-400">
+                     <span key={i} className="px-3 py-1 dark:bg-white/5 bg-gray-100 border dark:border-white/10 border-gray-200 rounded-full text-xs dark:text-gray-400 text-gray-600">
                         {tag}
                      </span>
                    ))}
@@ -167,7 +181,7 @@ const Projects = () => {
                     href={project.github} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2.5 bg-white/5 border border-white/10 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-white/10 transition-all duration-300"
+                    className="px-4 py-2.5 dark:bg-white/5 bg-gray-100 border dark:border-white/10 border-gray-200 dark:text-white text-gray-700 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-primary/10 hover:text-primary transition-all duration-300"
                   >
                      Source
                   </a>

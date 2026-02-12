@@ -57,8 +57,8 @@ const Contact = () => {
             viewport={{ once: true }}
             className="w-16 h-1 w-16 mb-4 bg-primary rounded-full"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Get In Touch</h2>
-          <p className="text-gray-400 text-center max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 dark:text-white text-gray-900">Get In Touch</h2>
+          <p className="dark:text-gray-400 text-gray-600 text-center max-w-2xl">
             Have a project in mind? Let's build something amazing together. Reach out via the form or social media.
           </p>
         </div>
@@ -73,7 +73,7 @@ const Contact = () => {
             className="space-y-12"
           >
             <div>
-              <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-8 dark:text-white text-gray-900">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, idx) => (
                   <a 
@@ -81,12 +81,12 @@ const Contact = () => {
                     href={info.href}
                     className="flex items-center gap-6 group"
                   >
-                    <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <div className="w-12 h-12 rounded-2xl dark:bg-primary/10 bg-primary/5 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
                        <info.icon size={20} />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 uppercase font-bold tracking-widest">{info.label}</p>
-                      <p className="text-lg font-medium text-gray-200 group-hover:text-primary transition-colors">{info.value}</p>
+                      <p className="text-lg font-medium dark:text-gray-200 text-gray-700 group-hover:text-primary transition-colors">{info.value}</p>
                     </div>
                   </a>
                 ))}
@@ -94,7 +94,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-6">Follow Me</h3>
+              <h3 className="text-xl font-bold mb-6 dark:text-white text-gray-900">Follow Me</h3>
               <div className="flex gap-4">
                 {[Github, Linkedin, Twitter].map((Social, idx) => (
                   <motion.a 
@@ -102,7 +102,7 @@ const Contact = () => {
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     href="#"
-                    className="w-12 h-12 rounded-xl glass border border-white/10 flex items-center justify-center text-gray-400 hover:text-primary transition-colors"
+                    className="w-12 h-12 rounded-xl glass border dark:border-white/10 border-gray-200 flex items-center justify-center dark:text-gray-400 text-gray-600 hover:text-primary transition-colors"
                   >
                     <Social size={20} />
                   </motion.a>
@@ -117,12 +117,12 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="glass-card p-10 rounded-[2.5rem]"
+            className="glass-card p-10 rounded-[2.5rem] dark:bg-white/2 bg-white border dark:border-white/10 border-gray-100 shadow-xl"
           >
             <form onSubmit={onSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-semibold text-gray-400 ml-1">Your Name</label>
+                  <label htmlFor="name" className="text-sm font-semibold dark:text-gray-400 text-gray-600 ml-1">Your Name</label>
                   <input
                     type="text"
                     id="name"
@@ -130,12 +130,12 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/50 transition-colors"
+                    className="w-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 dark:text-white text-gray-900 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/50 transition-colors placeholder-gray-400"
                     placeholder="enter your name"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-semibold text-gray-400 ml-1">Your Email</label>
+                  <label htmlFor="email" className="text-sm font-semibold dark:text-gray-400 text-gray-600 ml-1">Your Email</label>
                   <input
                     type="email"
                     id="email"
@@ -143,13 +143,13 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/50 transition-colors"
+                    className="w-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 dark:text-white text-gray-900 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/50 transition-colors placeholder-gray-400"
                     placeholder="enter email"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-semibold text-gray-400 ml-1">Your Message</label>
+                <label htmlFor="message" className="text-sm font-semibold dark:text-gray-400 text-gray-600 ml-1">Your Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -157,7 +157,7 @@ const Contact = () => {
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                  className="w-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 dark:text-white text-gray-900 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary/50 transition-colors resize-none placeholder-gray-400"
                   placeholder="How can I help you?"
                 />
               </div>
